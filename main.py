@@ -5,8 +5,6 @@ import toml
 
 
 def run_streamlit_app():
-    #os.chdir('src/ui')
-    #os.system('streamlit run dashboard.py')
     os.system('streamlit run src/ui/dashboard.py')
 
 

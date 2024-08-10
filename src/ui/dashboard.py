@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from src.models.nn_search import get_allstar_comps
 from src.models.win_prediction import calculate_top_players_ui
-from src.ui.graphics.radar_plots import make_radar_plot
+from src.ui.radar_plots import make_radar_plot
 
 print("app start")
 st.session_state.i = 1
