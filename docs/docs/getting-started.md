@@ -1,7 +1,7 @@
 Getting started
 ===============
 
-## Data Scraping
+## Setup
 
 ### Stathead Data
 - Create an account with [stathead.com](https://stathead.com/basketball/)
@@ -21,3 +21,10 @@ Getting started
   KAGGLE_USERNAME=your_username
   KAGGLE_KEY=your_api_key
   ```
+
+### Manual Collection
+- International player statistics and a list of draft prospects must be collected manually as described in the release notes
+
+## Build
+1. Run build.py
+2. Run college_player_comps.ipynb adding manual data where necessary
