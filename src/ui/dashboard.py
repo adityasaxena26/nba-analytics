@@ -33,19 +33,22 @@ st.session_state.rookies_df = rookie_stats
 @st.fragment
 def update_model():
     team = st.selectbox("Select your Team", teams, key=42)
-    if st.button('Enter'):
+    if st.button('Generate Draft Suggestions'):
         print(f"update table for {team}")
         st.subheader(f"Best Available Players for the {team}")
         available_rookies = list(st.session_state.rookies_df.index)
         top_players = pd.DataFrame(calculate_top_players_ui(team, available_rookies))
         player_comparisons = get_allstar_comps(list(top_players["player"]))
         top_players["All Star Comparison"] = player_comparisons
+        top_players.columns = ["Player Name", "Pred. Win% w Player", "NBA All-Star Comparison"]
         st.dataframe(top_players, hide_index=True)
 
 
 @st.fragment
 def display_stats():
     st.subheader("Available Players")
+    table_desc = '<p style="font-size:15px; color:black;">Table shows full draft class, remove player when drafted to keep model results up to date</p>'
+    st.markdown(table_desc, unsafe_allow_html=True)
     drafted = st.selectbox("Select Drafted Player", st.session_state.rookie_names, key=15)
     if st.session_state.i <= 1:
         st.session_state.i += 1
@@ -62,11 +65,14 @@ def display_stats():
 @st.fragment
 def display_plot():
     st.subheader("Player Radar Plot")
+    st.markdown("Radar plot shows percentile ranks for selected player compared to entire draft class")
     player_plot = st.selectbox("Select Player", st.session_state.all_rookie_names, key=25)
     if st.button("Plot Stats"):
         ca, c2, c3 = st.columns([1, 2, 1])
         with c2:
             st.pyplot(make_radar_plot(player_plot))
+            plot_caption = '<p style="font-size:12px; color:grey;"text-align: center;">REB: Rebounds<br>3P: 3-Pointers<br>PTS: Points<br>FG%: Field Goal Percentage<br>BLK: Blocks<br>STL: Steals<br>AST: Assists</p>'
+            st.markdown(plot_caption, unsafe_allow_html=True)
 
 
 st.set_page_config(page_title="NBA Draft Companion")
