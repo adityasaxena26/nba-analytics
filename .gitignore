@@ -31,3 +31,6 @@ venv.bak/
 # Kaggle datasets
 /data/external/kaggle1/
 /data/external/kaggle2/
+
+# Jetbrains
+/.idea
