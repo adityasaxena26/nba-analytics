@@ -15,4 +15,4 @@ clean.clean_team_stats('data/external/team_stats.csv', interim_dir)
 clean.process_player_data_long(kaggle1_dir='data/external/kaggle1',
                                kaggle2_dir='data/external/kaggle2',
                                output_dir=interim_dir)
-clean.clean_player_data_long('data/interim/player_data_aggregated.csv', processed_dir)
+clean.clean_player_data_long('data/interim/player_data_long_aggregated.csv', processed_dir)

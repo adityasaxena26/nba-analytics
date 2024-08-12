@@ -208,6 +208,6 @@ if __name__ == '__main__':
     college_query = "https://stathead.com/basketball/cbb/player-season-finder.cgi?request=1&order_by=pts_per_g&year_min=2001&year_max=2024&comp_id=NCAAM&team_success=ncaa_made&draft_status=drafted&draft_pick_type=overall"
 
     # Scraping player data from Stathead
-    scrape_stathead_knn_stats(directory, player_query, 10000, "all_player_stats_00-24.csv")
-    scrape_stathead_knn_stats(directory, all_star_query, 600, "allstar_stats_00-24.csv")
-    scrape_stathead_knn_stats(directory, college_query, 1600, "college_player_stats_00-24.csv")
+    scrape_stathead_knn_stats(directory, player_query, 10000, "all_player_stats.csv")
+    scrape_stathead_knn_stats(directory, all_star_query, 600, "allstar_stats.csv")
+    scrape_stathead_knn_stats(directory, college_query, 1600, "college_player_stats.csv")

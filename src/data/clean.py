@@ -85,7 +85,7 @@ def clean_player_data_short(player_df: Union[pd.DataFrame, str],
 def process_player_data_long(kaggle1_dir: str,
                              kaggle2_dir: str,
                              output_dir: str,
-                             filename: str = 'player_data_aggregated.csv') -> pd.DataFrame:
+                             filename: str = 'player_data_long_aggregated.csv') -> pd.DataFrame:
     """
     Combines player data from kaggle. Writes results to CSV and returns DataFrame
 
@@ -136,7 +136,7 @@ def process_player_data_long(kaggle1_dir: str,
 
 def clean_player_data_long(combined_df: Union[pd.DataFrame, str],
                            output_dir: str,
-                           filename: str = 'player_data_clean.csv') -> pd.DataFrame:
+                           filename: str = 'player_data_long.csv') -> pd.DataFrame:
     """
     Cleans combined player data from Kaggle and returns cleaned DataFrame
 
@@ -205,7 +205,7 @@ if __name__ == '__main__':
 
     # Clean
     clean_team_stats('data/external/team_stats.csv', processed_dir)
-    clean_player_data_long('data/interim/player_data_aggregated.csv', processed_dir)
-    clean_player_data_short('data/external/all_player_stats_00-24.csv',
-                            'data/external/allstar_stats_00-24.csv',
+    clean_player_data_long('data/interim/player_data_long_aggregated.csv', processed_dir)
+    clean_player_data_short('data/external/all_player_stats.csv',
+                            'data/external/allstar_stats.csv',
                             processed_dir)
