@@ -1,7 +1,6 @@
 import os
 import webbrowser
 import toml
-# TODO: Update README
 
 
 def run_streamlit_app():

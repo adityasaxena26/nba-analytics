@@ -16,7 +16,6 @@ load_dotenv()
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 
-# TODO: Eliminate reused scraping code
 def scrape_stathead_knn_stats(output_dir: str,
                               query_url: str,
                               n_players: int,

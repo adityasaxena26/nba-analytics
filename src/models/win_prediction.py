@@ -189,8 +189,3 @@ def calculate_top_players_ui(selected_team: str, available_players: list) -> dic
     predictions = predictions.to_dict()
 
     return predictions
-
-
-def fit_model():
-    # TODO: Scale features to get better feature importance
-    pass

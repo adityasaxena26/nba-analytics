@@ -28,51 +28,47 @@ Utilizing NBA and combine data to predict player/team performance and improve dr
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
+├── .streamlit         <- Streamlit config
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
 │   ├── external       <- Data from third party sources.
 │   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+│   └── processed      <- The final, canonical data sets for modeling.
 │
-├── docs               <- A default mkdocs project; see mkdocs.org for details
+├── docs               <- View docs by opening index.html
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── models             <- Trained models
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for nba_analytics
-│                         and configuration for tools like black
+├── notebooks          <- Jupyter notebooks
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
+├── reports            <- Generated analysis 
+│   └── figures        <- Generated graphics
 │
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+├── requirements.txt   <- File for reproducing environment with pip
+│
+├── environment.yml    <- File for reproducing environment with conda
+│
+├── build.py           <- Run to collect and clean all data (along with college_player_comps.ipynb)
+│
+├── main.py            <- Run to use application
 │
 └── nba_analytics                <- Source code for use in this project.
     │
     ├── __init__.py    <- Makes nba_analytics a Python module
     │
-    ├── data           <- Scripts to download or generate data
-    │   └── make_dataset.py
+    ├── data           <- Scripts to download and clean data
+    │   ├── load.py
+    │   └── clean.py
     │
-    ├── features       <- Scripts to turn raw data into features for modeling
-    │   └── build_features.py
+    ├── models         <- Scripts to train models and make predictions
+    │   ├── nn_search.py
+    │   └── win_prediction.py
     │
-    ├── models         <- Scripts to train models and then use trained models to make
-    │   │                 predictions
-    │   ├── predict_model.py
-    │   └── train_model.py
-    │
-    └── visualization  <- Scripts to create exploratory and results oriented visualizations
-        └── visualize.py
+    └── ui  <- Scripts to run UI applidation
+        ├── radar_plots.py
+        └── dashboard.py
 ```
 
 
